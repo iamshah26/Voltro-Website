@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voltro</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        padding-left: 8%;
+        padding-right: 8%;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .logo {
+        cursor: pointer;
+        width: 100px;
+        margin: 25px 0;
+      }
+      .menuicon {
+        width: 25px;
+        cursor: pointer;
+        display: none;
+      }
+      .navb {
+        flex: 1;
+        text-align: right;
+      }
+      .navb ul li {
+        display: inline-block;
+        list-style: none;
+        margin-right: 30px;
+      }
+      .navb ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+      }
+      .navb ul li a:hover {
+        color: white;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 33px 9px;
+      }
+      .col-1 {
+        flex-basis: 40%;
+        position: relative;
+        margin-left: 50px;
+      }
+      .col-1 h1 {
+        color: #2e3572;
+        font-size: 45px;
+      }
+      .col-1 p {
+        color: #2e3572;
+        font-size: 14px;
+      }
+      button {
+        width: 168px;
+        margin-left: 25px;
+        margin-top: 16px;
+        border: 0;
+        padding: 12px 10px;
+        outline: none;
+        background: linear-gradient(to right, #fb5283, #ff3527);
+        color: white;
+        border-radius: 33px;
+        cursor: pointer;
+        transition: width 0.5s;
+      }
+      button img {
+        width: 30px;
+        display: none;
+      }
+      button:hover img {
+        display: block;
+      }
+      button:hover {
+        width: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .col-1:after {
+        content: "";
+        width: 10px;
+        height: 74%;
+        background: linear-gradient(to right, #ff469f, #ff6062);
+        position: absolute;
+        left: -40px;
+        top: 8px;
+      }
+      .col-2 {
+        position: relative;
+        flex-basis: 60%;
+        display: flex;
+        align-items: center;
+      }
+      .col-2 .person {
+        width: 90%;
+        margin-left: 90px;
+      }
+      .color-box {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: linear-gradient(#f86363, #f57e60);
+        border-radius: 50;
+        height: 121%;
+        margin-top: -164px;
+        margin-right: 0px;
+        width: 108%;
+        z-index: -1;
+        transform: translate(150px);
+      }
+      .soical-media img {
+        height: 24px;
+        margin: 15px;
+        justify-content: space-around;
+        cursor: pointer;
+      }
+      .soical-media {
+        text-align: center;
+      }
+      @media only screen and (max-width: 700px) {
+        .navb ul {
+          width: 100%;
+          background: linear-gradient(#f86363, #f57e60);
+          position: absolute;
+          top: 75px;
+          right: 0;
+          z-index: 2;
+          display: none;
+        }
+        .navb ul li {
+          display: block;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        .navb ul li a {
+          color: #fff;
+        }
+        .menuicon {
+          display: block;
+        }
+        .logo {
+          width: 81px;
+        }
+        .display-hide{
+            display: none;
+        }
+        .display-hide{
+            display: block;
+        }
+        .row{
+            flex-direction: column-reverse;
+            margin: 85px 0;
+        }
+        .col-2{
+            flex-basis: 100%;
+            margin-bottom: 50px;
+        }
+        .col-2 .person{
+            width: 77%;
+            margin-left: 108px;
+        }
+        .color-box{
+            height: 527px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <img src="/voltro icon.png" class="logo" />
+        <div class="navb">
+          <nav>
+            <ul id="menuList">
+              <li><a href="">Home</a></li>
+              <li><a href="">Service</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Contact us</a></li>
+            </ul>
+          </nav>
+        </div>
+        <img src="/menu.png" class="menuicon" onclick="toggLemenu()" />
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <h1>A full-service digital agency with its own digital powerhouse</h1>
+          <p>
+            Kicking off every project with detailed research and extensive on-
+            hand experience in the digital space delivering exactly as per your
+            vision.
+          </p>
+          <button class="btn">Get Started <img src="/arrow.png" /></button>
+        </div>
+        <div class="col-2">
+          <img src="/person.PNG" class="person" />
+          <div class="color-box"> <img src="/hero-background.svg" alt=""></div>
+        </div>
+      </div>
+      <div>
+        <div class="soical-media">
+          <img src="/fb.png" />
+          <img src="/insta.png" />
+          <img src="/twitter.png" />
+        </div>
+      </div>
+    </div>
+    <script>
+        var menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px";
+        function toggLemenu(){
+            var menuList = document.getElementById("menuList").style;
+            if (menuList.display === "none" || menuList.display === "")    
+            {    
+                console.log("menu");
+                document.getElementById("menuList").style.display = 'block';    
+            } else    
+            {    
+                console.log("menu222");
+                document.getElementById("menuList").style.display = 'none';   
+            }    
+        }
+        
+    </script>
+  </body>
+</html>
