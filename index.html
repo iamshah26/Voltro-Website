@@ -11,7 +11,7 @@
       }
       .container {
         width: 100%;
-        min-height: 100vh;
+        /* min-height: 100vh; */
         padding-left: 8%;
         padding-right: 8%;
         box-sizing: border-box;
@@ -21,53 +21,31 @@
         display: flex;
         align-items: center;
         width: 100%;
+        position: fixed;
+        z-index: 999;
       }
       .logo {
         cursor: pointer;
         width: 100px;
         margin: 25px 0;
       }
-      .menuicon {
+      /* .menuicon {
         width: 25px;
         cursor: pointer;
         display: none;
-      }
+      } */
       .navb {
         flex: 1;
         text-align: right;
       }
-      .navb ul li {
-        display: inline-block;
-        list-style: none;
-        margin-right: 30px;
-      }
-      .navb ul li a {
-        text-decoration: none;
-        color: #000;
-        font-size: 14px;
-      }
-      .navb ul li a:hover {
-        color: white;
-      }
+
       .row {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 33px 9px;
       }
-      .col-1 {
-        flex-basis: 40%;
-        position: relative;
-        margin-left: 50px;
-      }
-      .col-1 h1 {
-        color: #2e3572;
-        font-size: 45px;
-      }
-      .col-1 p {
-        color: #2e3572;
-        font-size: 14px;
-      }
+
       button {
         width: 168px;
         margin-left: 25px;
@@ -94,7 +72,7 @@
         align-items: center;
         justify-content: space-between;
       }
-      .col-1:after {
+      /* .content-center:after {
         content: "";
         width: 10px;
         height: 74%;
@@ -102,30 +80,56 @@
         position: absolute;
         left: -40px;
         top: 8px;
+      } */
+
+      .topnav {
+        overflow: hidden;
       }
-      .col-2 {
-        position: relative;
-        flex-basis: 60%;
-        display: flex;
-        align-items: center;
+
+      .topnav a {
+        float: right;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 13px 13px;
+        text-decoration: none;
+        font-size: 15px;
+        margin-right: 27px;
       }
-      .col-2 .person {
-        width: 90%;
-        margin-left: 90px;
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
       }
-      .color-box {
-        position: absolute;
-        right: 0;
-        top: 0;
-        background: linear-gradient(#f86363, #f57e60);
-        border-radius: 50;
-        height: 121%;
-        margin-top: -164px;
-        margin-right: 0px;
-        width: 108%;
-        z-index: -1;
-        transform: translate(150px);
+
+      .topnav a.active {
+        color: white;
       }
+
+      .topnav .icon {
+        display: none;
+      }
+      
+      @media screen and (max-width: 700px)
+      {
+        .col-6{
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        .topnav a:not(:first-child) {
+          display: none;
+        }
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+      }
+
       .soical-media img {
         height: 24px;
         margin: 15px;
@@ -135,109 +139,342 @@
       .soical-media {
         text-align: center;
       }
+      .h-100vh {
+        height: 100vh;
+      }
+      .content-center {
+        display: flex;
+        justify-content: center;
+      }
       @media only screen and (max-width: 700px) {
-        .navb ul {
-          width: 100%;
-          background: linear-gradient(#f86363, #f57e60);
-          position: absolute;
-          top: 75px;
-          right: 0;
-          z-index: 2;
-          display: none;
-        }
-        .navb ul li {
-          display: block;
-          margin-top: 10px;
-          margin-bottom: 10px;
-        }
-        .navb ul li a {
-          color: #fff;
-        }
-        .menuicon {
-          display: block;
-        }
         .logo {
           width: 81px;
         }
-        .display-hide{
-            display: none;
+        .display-hide {
+          display: none;
         }
-        .display-hide{
-            display: block;
+        .display-hide {
+          display: block;
         }
-        .row{
-            flex-direction: column-reverse;
-            margin: 85px 0;
+        .row {
+          flex-wrap: wrap-reverse;
+          margin: 85px 0;
         }
-        .col-2{
-            flex-basis: 100%;
-            margin-bottom: 50px;
+        .col-4{
+          width: 50%;
+         
         }
-        .col-2 .person{
-            width: 77%;
-            margin-left: 108px;
+        /* .col-6 {
+          flex-basis: 100%;
+          margin-bottom: 50px;
         }
-        .color-box{
-            height: 527px;
+        .col-6 .person {
+          width: 50%;
+          margin-left: 100px;
+        } */
+      }
+      /* .menuicon {
+        width: 25px;
+        cursor: pointer;
+        display: none;
+      } */
+      .person {
+        width: 81%;
+        margin-left: 117px;
+      }
+      .col-6 {
+        width: 50%;
+      }
+      h1 {
+        color: #2e3572;
+        font-size: 45px;
+      }
+      p {
+        color: #2e3572;
+        font-size: 18px;
+        font-family: Rubik, sans-serif;
+      }
+      .mt-2 {
+        margin-top: 1.25rem;
+        color: #6b7383;
+      }
+      .hero-background {
+        background-image: url("./hero-background.svg");
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .package {
+        font-weight: 600;
+        margin-bottom: 22px;
+        color: #ff725e;
+      }
+      .service {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .containerservice {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .col-4 {
+        width: 30%;
+        height: 140px;
+        margin: 20px;
+        box-sizing: border-box;
+        font-size: 18px;
+        padding: 16px;
+        -webkit-box-shadow: 0 0 15px 14px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 15px 14px rgba(0, 0, 0, 0.1);
+        border: 1px solid white  ;
+        cursor: pointer;
+        transition: 0.8s;
+      }
+      .imgservice {
+        height: 45px;
+        padding: 20px;
+        display: flex;
+        margin-top: -45px;
+        margin-left: 256px;
+        
+        
+      }
+      .col-4:hover{
+        transition: 0.5s;
+        transform: scale(1.05);
+      }
+      .d-flex{
+        display: flex;
+      }
+      .justify-center{
+        justify-content: center;
+        
+        
+      }
+      .align-center{
+        align-items: center;
+        
+      }
+      .justify-space{
+        justify-content: space-between;
+      }
+      .margin{
+        margin-top:1.5rem
+      }
+      .section-width{
+        width: 1200px;
+      }
+      @media  screen and (max-width: 1200px) {
+        .col-4{
+          width: 45%;
         }
       }
+      @media only screen and (max-width: 900px) {
+        .col-4{
+          width: 100%;
+        }
+      }
+    
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="navbar">
-        <img src="/voltro icon.png" class="logo" />
-        <div class="navb">
-          <nav>
-            <ul id="menuList">
-              <li><a href="">Home</a></li>
-              <li><a href="">Service</a></li>
-              <li><a href="">About Us</a></li>
-              <li><a href="">Contact us</a></li>
-            </ul>
-          </nav>
+    <div class="navbar container">
+      <img src="/voltro icon.png" class="logo" />
+      <div class="navb">
+        <div class="topnav" id="myTopnav">
+          <a href="#home" class="active">Contact us</a>
+          <a href="#news">About Us</a>
+          <a href="#contact">Service</a>
+          <a href="#about">Home</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
         </div>
-        <img src="/menu.png" class="menuicon" onclick="toggLemenu()" />
+
+        <!-- <div style="padding-left:16px">
+        </div> -->
       </div>
-      <div class="row">
-        <div class="col-1">
-          <h1>A full-service digital agency with its own digital powerhouse</h1>
-          <p>
-            Kicking off every project with detailed research and extensive on-
-            hand experience in the digital space delivering exactly as per your
-            vision.
-          </p>
-          <button class="btn">Get Started <img src="/arrow.png" /></button>
-        </div>
-        <div class="col-2">
-          <img src="/person.PNG" class="person" />
-          <div class="color-box"> <img src="/hero-background.svg" alt=""></div>
+      <!-- <img src="/menu.png" class="menuicon" onclick="toggLemenu()" /> -->
+    </div>
+
+    <!-- Hero section -->
+    <section class="container hero-background">
+      <div class="content-center h-100vh">
+        <div class="row">
+          <div class="col-6">
+            <h1>
+              A full-service digital agency with its own digital powerhouse
+            </h1>
+            <p class="mt-2">
+              Kicking off every project with detailed research and extensive on-
+              hand experience in the digital space delivering exactly as per
+              your vision.
+            </p>
+            <button class="btn">Get Started <img src="/arrow.png" /></button>
+          </div>
+          <div class="col-6">
+            <img src="/person.PNG" class="person" />
+          </div>
         </div>
       </div>
-      <div>
-        <div class="soical-media">
-          <img src="/fb.png" />
-          <img src="/insta.png" />
-          <img src="/twitter.png" />
+    </section>
+    <div>
+      <h1 class="service">Our Services</h1>
+    </div>
+    <!-- Services  -->
+    <section class="d-flex justify-center">
+      <div class="containerservice section-width">
+      <div class="col-4">
+        <div class="d-flex align-center justify-space ">
+          <h3>
+            Digital Marketing   
+          </h3>
+          <img src="/digi.PNG" class="" />
         </div>
+        <img src="/arrow service.PNG" class="margin" />
+      </div>
+       <div class="col-4">
+        <div class="d-flex align-center justify-space ">
+          <h3>
+            Graphics Design  
+          </h3>
+          <img src="/graphics.PNG" class="" />
+        </div>
+        <img src="/arrow service.PNG" class="margin" />
+      </div>
+      <div class="col-4">
+        <div class="d-flex align-center justify-space ">
+          <h3>
+           Video & Animation
+          </h3>
+          <img src="/video.PNG" class="" />
+        </div>
+        <img src="/arrow service.PNG" class="margin" />
+      </div>
+      <div class="col-4">
+        <div class="d-flex align-center justify-space ">
+          <h3>
+            Software Development 
+          </h3>
+          <img src="/software.PNG" class="" />
+        </div>
+        <img src="/arrow service.PNG" class="margin" />
+      </div>
+      <div class="col-4">
+        <div class="d-flex align-center justify-space ">
+          <h3>
+            Web Development  
+          </h3>
+          <img src="/web.PNG" class="" />
+        </div>
+        <img src="/arrow service.PNG" class="margin" />
+      </div>
+      <div class="col-4">
+        <div class="d-flex align-center justify-space ">
+          <h3>
+          Mobile App Development 
+          </h3>
+          <img src="/mobile.PNG" class="" />
+        </div>
+        <img src="/arrow service.PNG" class="margin" />
+      </div>
+      <div class="col-4">
+        <div class="d-flex align-center justify-space ">
+          <h3>
+           QA Testing  
+          </h3>
+          <img src="/qa.PNG" class="" />
+        </div>
+        <img src="/arrow service.PNG" class="margin" />
+      </div>
+      <div class="col-4">
+        <div class="d-flex align-center justify-space ">
+          <h3>
+            Performance and Growth Hacking
+          </h3>
+          <img src="/performance.PNG" class="" />
+        </div>
+        <img src="/arrow service.PNG" class="margin" />
+      </div>
+      <div class="col-4">
+        <div class="d-flex align-center justify-space ">
+          <h3>
+            Programmatic & Marketing Automation 
+          </h3>
+          <img src="/program.PNG" class="" />
+        </div>
+        <img src="/arrow service.PNG" class="margin" />
       </div>
     </div>
-    <script>
-        var menuList = document.getElementById("menuList");
-        menuList.style.maxHeight = "0px";
-        function toggLemenu(){
-            var menuList = document.getElementById("menuList").style;
-            if (menuList.display === "none" || menuList.display === "")    
-            {    
-                console.log("menu");
-                document.getElementById("menuList").style.display = 'block';    
-            } else    
-            {    
-                console.log("menu222");
-                document.getElementById("menuList").style.display = 'none';   
+    </section>
+    <section class="container ">
+      <div class="content-center h-100vh">
+        <div class="row">
+          <div class="col-6">
+            <p class="package">HOURLY PACKAGES</p>
+            <h1>
+              A new approach to eCommerce
+            </h1>
+            <p class="mt-2">
+              An experienced team of engineers, marketers, and creative people
+              is a costly solution for continuous growth in this highly
+              competitive space. Seeing the unprecedented growth of eCommerce
+              and the challenges faced by business owners, we at VOLTRO came up
+              with a unique solution, to provide a whole team of professionals
+              at the price of a freelancer. We provide the reliability,
+              attention, and quality your brand needs, without breaking the
+              bank.
+            </p>
+            <button class="btn">View Packages <img src="/arrow.png" /></button>
+          </div>
+          <div class="col-6">
+            <img src="/girl.PNG" class="person" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div>
+      <div class="soical-media">
+        <img src="/fb.png" />
+        <img src="/insta.png" />
+        <img src="/twitter.png" />
+      </div>
+    </div>
+    <!-- <script>
+      var menuList = document.getElementById("menuList");
+      menuList.style.maxHeight = "0px";
+      function toggLemenu() {
+        var menuList = document.getElementById("menuList").style;
+        if (menuList.display === "none" || menuList.display === "") {
+          console.log("menu");
+          document.getElementById("menuList").style.display = "block";
+        } else {
+          console.log("menu222");
+          document.getElementById("menuList").style.display = "none";
+        }
             }    
         }
-        
+            }    
+        }
+            }    
+        }
+      }
+    </script> -->
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
     </script>
   </body>
 </html>
